@@ -1,5 +1,5 @@
 <h1>Formulaire de contact</h1>
-<form>
+<form method="post" action="traitement.html">
     <table align="center">
         <tr>
         <td><label for="nom">Votre nom</label></td>
@@ -20,15 +20,44 @@
         </tr>
                 
         <tr>
-            <td><label> Vous préférez : </label>
+            <td><label> Vous préférez : </label></td>
                 <td>
                     Symfony <input type="Checkbox" value="Symfony" name="Framework"/>
                     Angular <input type="checkbox" value="Angular" name="Framework"/>
                     Laravel <input type="checkbox" value="Laravel" name="Framework"/>
                     Java <input type="checkbox" value="Java" name="Programmation"/>
                 </td>
+        </tr>
+        <tr>
+            <td><label> Vous êtes : </label></td>
+                <td>
+                    Etudiant <input type="radio" value="Etudiant" name="votre situation"/>
+                    Professionnel <input type="radio" value="Professionnel" name="votre situation"/>
+                </td>
+        </tr>
+        <tr>
+            <td><label>Vous habitez : </label></td>
+            <td><select name="residence">
+                <option>-</option>
+                <option value="paris">Paris</option>
+                <option value="toulouse">Toulouse</option>
+                <option value="nice">Nice</option>
+                <option value="autre">Autre</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td><label>Votre message</label></td>
+            <td><textarea cols="22" rows="10"placeholder="votre message"></textarea></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Envoyer"/>
+            </td>
+            <td>
+                <input type="reset" value="annuler"/>
             </td>
         </tr>
+        
     </table>
 </form>
 
