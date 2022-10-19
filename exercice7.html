@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script language="javascript" type="text/javascript">
+            function jeu_case(){
+                var ms=0;
+                var c=0;
+                var nb=document.jeu.case.length;
+                for(var i=0;i<nb;i++){
+                    if(document.jeu.case[i].checked){
+                        c++;
+                    }
+                }
+                if(3==c){
+                    for(var k=0;k<nb;k++){
+                        if(document.jeu.case[k].checked){
+                            ms+=Number(document.jeu.case[k].value);
+                        }
+                    }
+                    document.jeu.my_sc.value=ms;
+                    if(ms>=15) alert("Vous êtes un expert");
+                    else{
+                        alert("Vous êtes un débutant");
+                    }
+                }
+                else{
+                    alert("Vous devez choisir exactement 3 cases");
+                    document.jeu.my_sc.value="";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3 align="center"> Veuillez cocher 3 cases</h3>
+        <form name="jeu" align="center">
+            <input type="checkbox" name="case" value="-8"/>Case 1 <br/>
+            <input type="checkbox" name="case" value="5"/>Case 2 <br/>
+            <input type="checkbox" name="case" value="3"/>Case 3 <br/>
+            <input type="checkbox" name="case" value="10"/>Case 4 <br/>
+            <input type="checkbox" name="case" value="0"/>Case 5 <br/>
+            <input type="checkbox" name="case" value="-1"/>Case 6 <br/>
+            <input type="checkbox" name="case" value="-7"/>Case 7 <br/>
+            <input type="checkbox" name="case" value="15"/>Case 8 <br/>
+            <input type="checkbox" name="case" value="8"/>Case 9 <br/>
+            <input type="checkbox" name="case" value="3"/>Case 10 <br/>
+            <hr width="50%"/>
+            <input type="button" onclick="jeu_case()" value="Calculer le score du jeu"><br/><br/>
+            <input type="text" name="my_sc"/>
+        </form>
+    </body>
+</html>

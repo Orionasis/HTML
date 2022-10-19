@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--Ceci est un commentaire en html-->
+<html>
+<head>
+    <script language="javascript" type="text/Javascript">
+        //alert("hello Js");
+        function info(){
+            alert("je suis un stagiaire");
+        }
+        function details(){
+            var nom=prompt("entrer votre nom","Nom ici");
+            var prenom=prompt("entrer votre prénom","Prenom ici");
+            alert("Vous êtes : " +nom +" " +prenom);
+        }
+        function calcul(){
+            var first_number=prompt("entre votre premier chiffre","premier chiffre");
+            var second_number=prompt("entre votre deuxième chiffre","deuxième chiffre");
+            alert("le résultat est : " +(Number(first_number)+Number(second_number))); 
+        }
+        function update(){
+            var elem=document.getElementById("Biographie");
+            elem.innerHTML="<h1> Orionas </h1>";
+        }
+        function updateEnter(){
+            var elem=document.getElementById("Biographie");
+            elem.innerHTML="<h1> Orionas </h1>";
+        }
+        function updateLeave(){
+            var elem=document.getElementById("Biographie");
+            elem.innerHTML="<h1> Bye </h1>"
+        }
+        function calcul_xy(){
+            var x=parseFloat(prompt("entrer x",""));
+            var y=parseFloat(prompt("entrer y",""));
+            if((isNaN(x))||(isNaN(y))){alert("Nombre invalide"); return;}
+            if(x>5){
+                x-=5;
+            }
+            else{
+                x+=5;
+            }
+            if(y>10){
+                y-=10;
+            }
+            else{
+                y+=10;
+            }
+            document.writeln("Le resultat est = "+(x+y));
+            }
+            function valider(){
+                var nom=document.inscription.nom.value;
+                alert("Votre nom = "+nom);
+            }
+
+            function valider_fiche(){
+                var nom=document.fiche.nom.value;
+                var cin=document.fiche.cin.value;
+                if((""==nom) || (""==cin)){
+                    alert("les champs sont vides");
+                }
+                else{alert("Les champs sont non vides")}
+               if(Number(cin)){
+                        if(8==cin.length) //alert("cin valide")
+                        alert("les champs sont valides : "+nom +" "+cin);
+                        else alert("Taille du cin non valide")
+                    }
+                    else alert("le cin n'est pas numérique")
+
+            }
+        
+    </script>
+   
+</head>
+<body>
+    <h1 align="center"> Bienvenue au monde de js</h1>
+<button onclick="info()"> cliquer ici</button>
+<button onclick="details()">Qui vous êtes?</button>
+<button onclick="calcul()">Calcul</button>
+<button onclick="update()">Update bio</button>
+<p onmouseenter="updateEnter()" onmouseleave="updateLeave()" id="Biographie" style="border:1px solid red">Je m'appelle samy Hamdan</p>
+<button onclick="calcul_xy()">Calcul de x+y</button>
+<form name="inscription">
+    Nom:<input type="text" name="nom"/>
+    <button onclick="valider()">valider</button>
+</form>
+<form name="fiche">
+    Nom :<input type="text" name="nom"/>
+    CIN :<input type="text" name="cin"/>
+    <button onclick="valider_fiche()">valider</button>
+</form>
+</body>
+</html>

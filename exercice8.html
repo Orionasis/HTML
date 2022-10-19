@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script language="javascript" type="text/javascript">
+            function check_case(){
+                var nb=document.radis.case.length;
+                for(var i=0;i<nb;i++){
+                    if(document.radis.case[i].checked){
+                        alert("Vous avez choisi "+document.radis.case[i].value);
+                }
+            }
+            }
+        </script>
+    </head>
+    <body>
+        <h3 align="center"> Entrer votre choix</h3>
+        <form name="radis" align="center">
+            <input type="radio" name="case" value="choix numéro 3"/>Choix numéro 1 <br/>
+            <input type="radio" name="case" value="choix numéro 2"/>Choix numéro 2 <br/>
+            <input type="radio" name="case" value="choix numéro 3"/>Choix numéro 3 <br/>
+            <hr width="50%"/>
+            <input type="button" onclick="check_case()" value="choix">Quel est votre choix
+
+        </form>
+    </body>
+</html>
